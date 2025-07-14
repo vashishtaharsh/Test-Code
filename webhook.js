@@ -55,6 +55,7 @@ app.get('/webhook', (req, res) => {
 // Webhook event listener (POST)
 app.post('/webhook', (req, res) => {
     const message = req.body?.entry?.[0]?.changes?.[0]?.value?.messages?.[0];
+    console.log('Received webhook event:', message);
 
     if (message) {
         const from = message.from;
